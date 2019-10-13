@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Student of class : <span th:text="${lop.name}"></span></h1>
+    <p>
+        <a href="/classes">List Class</a>
+        <a href="/students">List student</a>
+    </p>
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>Address</td>
+            <td>Email</td>
+        </tr>
+        <th:block th:each=" c : ${student}">
+            <tr>
+                <td th:text="${c.name}"></td>
+                <td th:text="${c.address}"></td>
+                <td th:text="${c.email}"></td>
+            </tr>
+        </th:block>
+    </table>
+</body>
+</html>

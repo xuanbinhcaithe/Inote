@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>List class</h1>
+    <p>
+        <a href="/create-class">Create new class</a>
+    </p>
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+        <th:block th:each="c : ${classes}">
+            <tr>
+                <td ><a th:href="@{/view-class/__${c.id}__}"><span th:text="${c.name}"></span></a></td>
+                <td><a th:href="@{/edit-class/__${c.id}__}">Edit</a></td>
+                <td><a th:href="@{/delete-class/__${c.id}__}">Delete</a></td>
+            </tr>
+        </th:block>
+    </table>
+</body>
+</html>
